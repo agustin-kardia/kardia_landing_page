@@ -1,4 +1,21 @@
-const DISCIPLINES = [
+interface Discipline {
+  index: string;
+  code: string;
+  name: string;
+  body: string;
+  tags: string[];
+}
+
+interface Studio {
+  modifier: string;
+  src: string;
+  alt: string;
+  label: string;
+  name: string;
+  delay: number;
+}
+
+const DISCIPLINES: Discipline[] = [
   {
     index: '01',
     code: 'HIIT',
@@ -22,7 +39,7 @@ const DISCIPLINES = [
   },
 ];
 
-const STUDIOS = [
+const STUDIOS: Studio[] = [
   {
     modifier: 'frente',
     src: '/assets/studio-frente.png',
@@ -57,7 +74,13 @@ const STUDIOS = [
   },
 ];
 
-function DisciplineCard({ discipline, delay }) {
+function DisciplineCard({
+  discipline,
+  delay,
+}: {
+  discipline: Discipline;
+  delay: number;
+}) {
   const delayClass = delay > 0 ? ` reveal-delay-${delay}` : '';
 
   return (
@@ -86,7 +109,7 @@ function DisciplineCard({ discipline, delay }) {
   );
 }
 
-function StudioPhoto({ studio }) {
+function StudioPhoto({ studio }: { studio: Studio }) {
   const delayClass = studio.delay > 0 ? ` reveal-delay-${studio.delay}` : '';
 
   return (

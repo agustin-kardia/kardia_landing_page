@@ -1,7 +1,7 @@
 /**
  * Smoothly scrolls to a DOM element, accounting for the fixed navbar height.
  */
-export function scrollToElement(selector) {
+export function scrollToElement(selector: string) {
   const target = document.querySelector(selector);
   if (!target) return;
 

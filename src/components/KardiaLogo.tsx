@@ -10,11 +10,11 @@ const LOGO_PATHS_TEXT = [
   'M291.17,31.07l15.51-16.21,11.07-11.57C318.93,2.05,318.05,0,316.34,0h-22.1c-.53,0-1.03.21-1.4.59l-3.69,3.82-15.09,15.6-44.66,46.16h0s-8.37,9.27-9.45,8.2c-.25-.33-.47-.68-.47-1.12V1.94C219.48.87,218.61,0,217.54,0h-17.83c-1.07,0-1.94.87-1.94,1.94v150.48c0,1.07.87,1.94,1.94,1.94h17.83c1.07,0,1.94-.87,1.94-1.94v-54.14c0-1.25,1.01-2.26,2.26-2.26h70.66c1.07,0,1.94.87,1.94,1.94v54.45c0,1.07.87,1.94,1.94,1.94h17.61c1.07,0,1.95-.87,1.95-1.95v-55.25c0-11.29-5.58-20.04-16.58-20.04h-50c-.85,0-1.28-1.02-.7-1.63l42.61-44.43Z',
 ];
 
-/**
- * Reusable KARDIA logo SVG. Pass variant="nav" | "ghost" | "footer"
- * to apply the matching CSS class (size + fill color).
- */
-export default function KardiaLogo({ variant = 'nav' }) {
+interface KardiaLogoProps {
+  variant?: 'nav' | 'ghost' | 'footer';
+}
+
+export default function KardiaLogo({ variant = 'nav' }: KardiaLogoProps) {
   return (
     <svg
       className={`logo-mark logo-mark--${variant}`}

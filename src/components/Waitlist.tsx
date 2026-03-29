@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { type FormEvent, useState } from 'react';
 import KardiaLogo from './KardiaLogo';
 
 export default function Waitlist() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function handleSubmit(e) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setIsSubmitted(true);
   }
